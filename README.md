@@ -1,3 +1,3 @@
 # CoordinatorTools
 
-A description of this package.
+Swift package with tools for coordinator pattern
