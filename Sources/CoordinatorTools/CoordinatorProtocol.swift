@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Protocol to inherit for coordinator classes
+/// Protocol for coordinator classes
 public protocol Coordinator {
     func start()
 }
