@@ -8,9 +8,10 @@
 import Foundation
 
 /// Protocol for coordinator classes
-public protocol Coordinator {
-    func start()
-}
+public protocol Coordinator: AnyObject {
+    associatedtype Output
+    func start() async throws -> Output
+  }
 
 public protocol Requirements {}
 
@@ -18,7 +19,7 @@ public protocol CoordinatorFactory {
     associatedtype R: Requirements
 
     init()
-    func makeCoordinator(for requirements: R) -> Coordinator
+    func makeCoordinator(for requirements: R) -> any Coordinator
 }
 
 extension CoordinatorFactory {
